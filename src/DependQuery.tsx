@@ -14,7 +14,7 @@ export const DependQuery = () => {
     return data.data;
   };
 
-  const { data: posts } = useQuery("get-comments", () => getPosts());
+  const { data: posts } = useQuery("get-comments", getPosts);
   const postFirstId = posts && posts[0].id;
 
   const { data: comments } = useQuery(

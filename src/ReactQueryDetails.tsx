@@ -5,6 +5,7 @@ export const ReactQueryDetails = () => {
   const { postId } = useParams();
   console.log("postId: ", postId);
   const { isLoading, isError, data } = usePostId(postId as string);
+  console.log("isLoading: ", isLoading);
   if (isLoading) return <>Loading...</>;
   if (isError) return <>에러가 발생했습니다.</>;
 

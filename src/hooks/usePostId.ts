@@ -1,4 +1,4 @@
-import { useQuery } from "react-query";
+import { useQuery, useQueryClient } from "react-query";
 import axios from "axios";
 
 export interface Post {
@@ -16,6 +16,18 @@ const getPostDetails = async (id: string) => {
 };
 
 export const usePostId = (id: string) => {
-  console.log("id: ", id);
-  return useQuery<Post>(["post-id", id], () => getPostDetails(id));
+  const queryClient = useQueryClient();
+
+  return useQuery(["post-id", id], () => getPostDetails(id), {
+    initialData: () => {
+      const posts: Post[] | undefined = queryClient.getQueryData("get-posts");
+      const postSummary = posts?.find((p: Post) => p.id === Number(id));
+
+      if (postSummary) {
+        return postSummary;
+      } else return undefined;
+    },
+  });
+
+  // return useQuery<Post>(["post-id", id], () => getPostDetails(id));
 };
