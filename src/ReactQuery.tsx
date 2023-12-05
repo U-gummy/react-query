@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Post, usePost } from "./hooks/usePost";
 
 export const ReactQuery = () => {
@@ -30,7 +31,12 @@ export const ReactQuery = () => {
       </button>
 
       <ul className="list-disc p-4">
-        {data && data?.map((item) => <li key={item.id}>{item.title}</li>)}
+        {data &&
+          data?.map((item) => (
+            <li key={item.id}>
+              <Link to={`/react-query/${item.id}`}>{item.title}</Link>
+            </li>
+          ))}
       </ul>
     </>
   );
