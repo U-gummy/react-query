@@ -7,6 +7,7 @@ import { ReactQueryDevtools } from "react-query/devtools";
 import { ReactQueryDetails } from "./ReactQueryDetails";
 import { ParallelQuery } from "./ParallelQuery";
 import { DynamicParallelQueries } from "./DynamicParallelQueries";
+import { DependQuery } from "./DependQuery";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             path="/dynamic-parallel-queries"
             element={<DynamicParallelQueries postIds={["1", "3"]} />}
           />
+          <Route path="/depend-query" element={<DependQuery />} />
         </Route>
       </Routes>
       <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
