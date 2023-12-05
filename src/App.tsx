@@ -8,6 +8,7 @@ import { ReactQueryDetails } from "./ReactQueryDetails";
 import { ParallelQuery } from "./ParallelQuery";
 import { DynamicParallelQueries } from "./DynamicParallelQueries";
 import { DependQuery } from "./DependQuery";
+import { PaginatedQuery } from "./PaginatedQuery";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             element={<DynamicParallelQueries postIds={["1", "3"]} />}
           />
           <Route path="/depend-query" element={<DependQuery />} />
+          <Route path="/paginated-query" element={<PaginatedQuery />} />
         </Route>
       </Routes>
       <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
