@@ -9,6 +9,7 @@ import { ParallelQuery } from "./ParallelQuery";
 import { DynamicParallelQueries } from "./DynamicParallelQueries";
 import { DependQuery } from "./DependQuery";
 import { PaginatedQuery } from "./PaginatedQuery";
+import { PaginatedQueryObserver } from "./PaginatedQueryObserver";
 
 function App() {
   return (
@@ -26,6 +27,10 @@ function App() {
           />
           <Route path="/depend-query" element={<DependQuery />} />
           <Route path="/paginated-query" element={<PaginatedQuery />} />
+          <Route
+            path="/paginated-query-observer"
+            element={<PaginatedQueryObserver />}
+          />
         </Route>
       </Routes>
       <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />

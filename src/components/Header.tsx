@@ -10,6 +10,7 @@ export const Header = () => {
       <Link to="/dynamic-parallel-queries">Dynamic Parallel Queries</Link>
       <Link to="/depend-query">Dependent Query</Link>
       <Link to="/paginated-query">Paginated Query</Link>
+      <Link to="/paginated-query-observer">Paginated Query Observer</Link>
     </nav>
   );
 };
